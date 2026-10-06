@@ -1,0 +1,36 @@
+2026-10-05T02:46:30.806380Z DEBUG sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=140.1µs elapsed_secs=0.0001401
+2026-10-05T02:46:30.808519Z  INFO padi_core::app: Padi listening on http://0.0.0.0:8080
+2026-10-05T02:46:43.670804Z TRACE axum::serve: connection 127.0.0.1:54741 accepted
+2026-10-05T02:46:43.835754Z DEBUG sqlx::query: summary="SELECT COUNT(*) AS c …" db.statement="\n\nSELECT COUNT(*) AS c FROM users WHERE email = ?\n" rows_affected=0 rows_returned=1 elapsed=852.4µs elapsed_secs=0.0008524
+2026-10-05T02:46:44.788227Z DEBUG sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=62.8µs elapsed_secs=6.28e-5
+2026-10-05T02:46:44.807575Z DEBUG sqlx::query: summary="INSERT INTO users (created_at, …" db.statement="\n\nINSERT INTO users (created_at, email, name, password, role, updated_at) VALUES (?, ?, ?, ?, ?, ?)\n" rows_affected=1 rows_returned=0 elapsed=19.0687ms elapsed_secs=0.0190687
+2026-10-05T02:46:44.821842Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users WHERE (id = ?) LIMIT 1\n" rows_affected=0 rows_returned=0 elapsed=360.2µs elapsed_secs=0.0003602
+2026-10-05T02:46:44.925266Z DEBUG sqlx::query: summary="SELECT COUNT(*) AS c …" db.statement="\n\nSELECT COUNT(*) AS c FROM users WHERE email = ?\n" rows_affected=1 rows_returned=1 elapsed=257.8µs elapsed_secs=0.0002578
+2026-10-05T02:50:18.067810Z DEBUG sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=135.6µs elapsed_secs=0.0001356
+2026-10-05T02:50:18.069770Z  INFO padi_core::app: Padi listening on http://0.0.0.0:8080
+2026-10-05T02:50:32.808208Z TRACE axum::serve: connection 127.0.0.1:61736 accepted
+2026-10-05T02:50:32.815887Z DEBUG sqlx::query: summary="SELECT COUNT(*) AS c …" db.statement="\n\nSELECT COUNT(*) AS c FROM users WHERE email = ?\n" rows_affected=0 rows_returned=1 elapsed=972.4µs elapsed_secs=0.0009724
+2026-10-05T02:50:33.741973Z DEBUG sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=53.4µs elapsed_secs=5.34e-5
+2026-10-05T02:50:33.789176Z DEBUG sqlx::query: summary="INSERT INTO users (created_at, …" db.statement="\n\nINSERT INTO users (created_at, email, name, password, role, updated_at) VALUES (?, ?, ?, ?, ?, ?) RETURNING id\n" rows_affected=1 rows_returned=1 elapsed=46.9203ms elapsed_secs=0.0469203
+2026-10-05T02:50:33.790714Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users WHERE (id = ?) LIMIT 1\n" rows_affected=0 rows_returned=1 elapsed=459.5µs elapsed_secs=0.0004595
+2026-10-05T02:50:33.790886Z ERROR padi_core::error: database error: error occurred while decoding column created_at: error in Any driver mapping: Any driver does not support the SQLite type SqliteTypeInfo(Datetime)
+2026-10-05T02:50:33.920362Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users WHERE (email = ?) LIMIT 1\n" rows_affected=1 rows_returned=1 elapsed=354.6µs elapsed_secs=0.0003546
+2026-10-05T02:50:33.920451Z ERROR padi_core::error: database error: error occurred while decoding column created_at: error in Any driver mapping: Any driver does not support the SQLite type SqliteTypeInfo(Datetime)
+2026-10-05T02:50:33.931268Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users WHERE (email = ?) LIMIT 1\n" rows_affected=0 rows_returned=1 elapsed=310.4µs elapsed_secs=0.0003104
+2026-10-05T02:50:33.931375Z ERROR padi_core::error: database error: error occurred while decoding column created_at: error in Any driver mapping: Any driver does not support the SQLite type SqliteTypeInfo(Datetime)
+2026-10-05T02:50:33.959836Z DEBUG sqlx::query: summary="SELECT COUNT(*) AS c …" db.statement="\n\nSELECT COUNT(*) AS c FROM users WHERE email = ?\n" rows_affected=1 rows_returned=1 elapsed=240.8µs elapsed_secs=0.0002408
+2026-10-05T02:51:07.485186Z DEBUG sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=157.7µs elapsed_secs=0.0001577
+2026-10-05T02:51:07.487488Z  INFO padi_core::app: Padi listening on http://0.0.0.0:8080
+2026-10-05T02:51:20.506329Z TRACE axum::serve: connection 127.0.0.1:61773 accepted
+2026-10-05T02:51:20.512646Z DEBUG sqlx::query: summary="SELECT COUNT(*) AS c …" db.statement="\n\nSELECT COUNT(*) AS c FROM users WHERE email = ?\n" rows_affected=0 rows_returned=1 elapsed=768µs elapsed_secs=0.000768
+2026-10-05T02:51:21.496012Z DEBUG sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=54µs elapsed_secs=5.4e-5
+2026-10-05T02:51:21.549573Z DEBUG sqlx::query: summary="INSERT INTO users (created_at, …" db.statement="\n\nINSERT INTO users (created_at, email, name, password, role, updated_at) VALUES (?, ?, ?, ?, ?, ?) RETURNING id\n" rows_affected=1 rows_returned=1 elapsed=53.2321ms elapsed_secs=0.0532321
+2026-10-05T02:51:21.551699Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users WHERE (id = ?) LIMIT 1\n" rows_affected=0 rows_returned=1 elapsed=381.8µs elapsed_secs=0.0003818
+2026-10-05T02:51:21.631004Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users WHERE (id = ?) LIMIT 1\n" rows_affected=1 rows_returned=1 elapsed=308.3µs elapsed_secs=0.0003083
+2026-10-05T02:51:21.660027Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users WHERE (email = ?) LIMIT 1\n" rows_affected=0 rows_returned=1 elapsed=265.4µs elapsed_secs=0.0002654
+2026-10-05T02:51:22.638278Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users WHERE (email = ?) LIMIT 1\n" rows_affected=1 rows_returned=1 elapsed=1.0746ms elapsed_secs=0.0010746
+2026-10-05T02:51:23.625375Z DEBUG sqlx::query: summary="SELECT COUNT(*) AS aggregate …" db.statement="\n\nSELECT COUNT(*) AS aggregate FROM users\n" rows_affected=0 rows_returned=1 elapsed=262.3µs elapsed_secs=0.0002623
+2026-10-05T02:51:23.626277Z DEBUG sqlx::query: summary="SELECT * FROM users …" db.statement="\n\nSELECT * FROM users ORDER BY id DESC LIMIT 5 OFFSET 0\n" rows_affected=1 rows_returned=1 elapsed=380.8µs elapsed_secs=0.0003808
+2026-10-05T03:14:37.365968Z DEBUG sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=223.7µs elapsed_secs=0.0002237
+2026-10-05T03:14:37.367913Z  INFO padi_core::app: Padi listening on http://0.0.0.0:8080
+2026-10-05T03:14:57.896433Z DEBUG sqlx::query: summary="PRAGMA foreign_keys = ON; …" db.statement="\n\nPRAGMA foreign_keys = ON; \n" rows_affected=0 rows_returned=0 elapsed=139µs elapsed_secs=0.000139

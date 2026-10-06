@@ -1,0 +1,3 @@
+2026-10-05T02:50:33.790967Z ERROR padi_core::error: database error: error occurred while decoding column created_at: error in Any driver mapping: Any driver does not support the SQLite type SqliteTypeInfo(Datetime)
+2026-10-05T02:50:33.920485Z ERROR padi_core::error: database error: error occurred while decoding column created_at: error in Any driver mapping: Any driver does not support the SQLite type SqliteTypeInfo(Datetime)
+2026-10-05T02:50:33.931445Z ERROR padi_core::error: database error: error occurred while decoding column created_at: error in Any driver mapping: Any driver does not support the SQLite type SqliteTypeInfo(Datetime)

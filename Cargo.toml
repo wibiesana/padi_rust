@@ -1,0 +1,8 @@
+[package]
+name = "padi_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+padi_core = { path = "../padi_rust_core" }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
