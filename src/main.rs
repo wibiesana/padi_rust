@@ -1,4 +1,4 @@
-use padi_core::{migrator::Migrator, prelude::*};
+use padi_core::prelude::*;
 
 mod controllers;
 mod models;
@@ -10,16 +10,12 @@ async fn main() -> Result<(), ApiError> {
     let root = env!("CARGO_MANIFEST_DIR");
     let args: Vec<String> = std::env::args().collect();
 
-    // CLI: `cargo run -- migrate` | `cargo run -- migrate:rollback`
-    if let Some(cmd) = args.get(1) {
+    // CLI handling
+    if args.len() > 1 {
         padi_core::env::load(&format!("{root}/.env"));
-        Database::connect().await?;
-        let dir = format!("{root}/database/migrations");
-        match cmd.as_str() {
-            "migrate" => println!("Migrated: {:?}", Migrator::run(&dir).await?),
-            "migrate:rollback" => println!("Rolled back: {:?}", Migrator::rollback(&dir).await?),
-            other => eprintln!("Unknown command: {other}"),
-        }
+        let _ = Database::connect().await;
+        let console = Console::new(root);
+        console.run(&args[1..]).await?;
         return Ok(());
     }
 
