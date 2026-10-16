@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+if [ $# -eq 0 ]; then
+    exec cargo run --quiet -- help
+else
+    exec cargo run --quiet -- "$@"
+fi

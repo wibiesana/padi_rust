@@ -1,0 +1,21 @@
+# Rust build artifacts
+/target
+
+# Environment variables & secrets
+.env
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs and cache
+*.log
+storage/logs/*
+!storage/logs/.gitkeep
+storage/cache/*
+!storage/cache/.gitkeep
+
+# OS specific files
+.DS_Store
+Thumbs.db
