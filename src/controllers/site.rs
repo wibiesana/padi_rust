@@ -1,7 +1,7 @@
 use padi_core::prelude::*;
 
 pub async fn index() -> ApiResult {
-    ok(json!({"name": "Padi Rust API Framework", "version": env!("CARGO_PKG_VERSION")}))
+    ok(json!({"name": "Padi Rust Api Framework", "version": env!("CARGO_PKG_VERSION")}))
 }
 
 pub async fn health() -> ApiResult {

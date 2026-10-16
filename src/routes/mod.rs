@@ -4,7 +4,7 @@ mod auth;
 mod site;
 mod users;
 
-/// Mirrors app/Routes/api.php of the PHP template.
+/// Main API router combining public, auth, and resource endpoints.
 pub fn api() -> Router {
     Router::new()
         .merge(site::routes())

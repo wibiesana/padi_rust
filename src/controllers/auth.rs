@@ -11,6 +11,14 @@ fn token_for(user: &Value) -> Result<String, ApiError> {
     )
 }
 
+fn auth_payload(user: &Value, token: &str) -> Value {
+    json!({
+        "user": UserResource::wrap(user),
+        "token": token,
+        "expires_in": TOKEN_TTL,
+    })
+}
+
 pub async fn register(Body(body): Body) -> ApiResult {
     let mut data = Validator::new(
         &body,
@@ -27,7 +35,7 @@ pub async fn register(Body(body): Body) -> ApiResult {
 
     let user = USERS.create(&data).await?;
     let token = token_for(&user)?;
-    created(json!({"user": UserResource::wrap(&user), "token": token, "expires_in": TOKEN_TTL}))
+    created(auth_payload(&user, &token))
 }
 
 pub async fn login(Body(body): Body) -> ApiResult {
@@ -44,11 +52,12 @@ pub async fn login(Body(body): Body) -> ApiResult {
         _ => return Err(ApiError::unauthorized("Invalid credentials")),
     };
     let token = token_for(&user)?;
-    ok(json!({"user": UserResource::wrap(&user), "token": token, "expires_in": TOKEN_TTL}))
+    ok(auth_payload(&user, &token))
 }
 
 pub async fn refresh(auth: AuthUser) -> ApiResult {
-    let user = USERS.find_or_fail(auth.user_id().unwrap_or(0)).await?;
+    let user_id = auth.user_id().ok_or_else(|| ApiError::unauthorized("Unauthenticated"))?;
+    let user = USERS.find_or_fail(user_id).await?;
     ok(json!({"token": token_for(&user)?, "expires_in": TOKEN_TTL}))
 }
 
@@ -58,5 +67,6 @@ pub async fn logout(_auth: AuthUser) -> ApiResult {
 }
 
 pub async fn me(auth: AuthUser) -> ApiResult {
-    ok(UserResource::wrap(&USERS.find_or_fail(auth.user_id().unwrap_or(0)).await?))
+    let user_id = auth.user_id().ok_or_else(|| ApiError::unauthorized("Unauthenticated"))?;
+    ok(UserResource::wrap(&USERS.find_or_fail(user_id).await?))
 }

@@ -4,10 +4,5 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-# Ambil dari repository terpisah di GitHub:
 padi_core = { git = "https://github.com/wibiesana/padi_rust_core.git", branch = "main" }
-
-# Catatan: Jika ingin develop secara offline di komputer lokal, ganti dengan:
-# padi_core = { path = "../padi_rust_core" }
-
 tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
