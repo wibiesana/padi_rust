@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌾 Padi REST API Framework (Rust Template)
+# 🌾 Padi Rust Api Framework (Template)
 
 **The Industrial-Grade, Zero-Bloat Rust Engine for the Modern Web**
 
@@ -10,7 +10,7 @@
 
 </div>
 
-Padi REST API Framework is a lightweight, zero-bloat code-generation framework built on top of Axum, Tokio, and SQLx.
+Padi Rust Api Framework is a lightweight, zero-bloat code-generation framework built on top of Axum, Tokio, and SQLx.
 
 ---
 
