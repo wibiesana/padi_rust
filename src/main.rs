@@ -1,3 +1,5 @@
+#![allow(dead_code, unused_imports)]
+
 use padi_core::prelude::*;
 
 mod controllers;

@@ -3,8 +3,7 @@ use padi_core::{hash, prelude::*};
 use crate::{models::USERS, resources::UserResource};
 
 pub async fn index(_auth: AuthUser, p: Params) -> ApiResult {
-    let (page, per) = p.pagination();
-    ok(UserResource::wraps(&USERS.paginate(page, per).await?))
+    ok(UserResource::wraps(&USERS.paginate_params(&p).await?))
 }
 
 pub async fn all(_auth: AuthUser) -> ApiResult {
